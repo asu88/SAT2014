@@ -1,0 +1,10 @@
+Codigo Adicional
+
+BOTN como enlace a una página:
+formulario = "<form action = '/update' method = 'post'> url: <input type='text' name ='xml' id ='rss' value =""/> <input type='submit' value='actualizar'/><br></form> "
+
+For para recorrer una lista hast una longitud determinada
+
+a = ['d','b', 'c']
+for x in range(len(a)):
+    print a[x]

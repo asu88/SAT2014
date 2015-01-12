@@ -1,0 +1,156 @@
+<html>
+        <head>
+            <title>revista {{name}}</title>
+            <link href="css/main.css" rel="stylesheet">
+                        {{link_css|safe}}
+            <img src = "/images/logo.png"WIDTH=50 HEIGHT=40>
+            
+         </head>
+        {% if user %}
+        <body>
+             
+             <header class="principal">
+           
+          <div class="fila">
+              <nav class="navegacion_principal ">
+                        <ul><li><h2><a href="/">Inicio</h2></li></ul>
+              </nav>
+              <nav class="navegacion_principal ">
+                    <ul><li><h2><a href="/todas">Todas</h2></li></ul>
+               </nav>
+               <nav class="navegacion_principal ">
+                    <ul><li><h2><a href="/incidencias">Incidencias</h2></li></ul>
+               </nav>
+               <nav class="navegacion_principal ">
+                    {{rss|safe}}
+               </nav>
+               <nav class="navegacion_principal right">   
+                    <ul><li><h2><a href="/ayuda">ayuda</a></h2></li></ul>
+               </nav>
+          </div>
+          </br>
+
+          {% if edit %}
+          <div align=right font size = 3>
+        
+         <form name="input" action="/edit/color" method="GET">
+            {% csrf_token %}
+            <input type="radio" name="color" value="red">Rojo
+            <input type="radio" name="color" value="black">Negro
+            <input type="radio" name="color" value="white">Blanco
+            <input type="radio" name="color" value="blue">Azul<br>
+            
+            <input type="submit" value="color-texto">
+        </form> 
+         
+        <form name="input" action="/edit/tamanio" method="GET">
+            {% csrf_token %}
+            <input type="radio" name="tamanio" value="12">12
+            <input type="radio" name="tamanio" value="15">15
+            <input type="radio" name="tamanio" value="18">18
+            <input type="radio" name="tamanio" value="21">21
+            <input type="radio" name="tamanio" value="24">24<br>
+            <input type="submit" value="size">
+         </form> 
+         
+         <form name="input" action="/edit/menu" method="GET">
+            {% csrf_token %}
+            <input type="radio" name="menu" value="red">Rojo
+            <input type="radio" name="menu" value="black">Negro
+            <input type="radio" name="menu" value="white">Blanco
+            <input type="radio" name="menu" value="wheat">wheat
+            <input type="radio" name="menu" value="blue">azul<br>
+            <input type="submit" value="color-menu">
+         </form> 
+
+         <form name="input" action="/edit/titulo" method="POST">
+            {% csrf_token %}
+
+            <input type="text" name="titulo" value="">
+            <input type="submit" value="editar titulo">
+         </form> 
+
+         </div><br>
+
+        {% endif %}
+
+          </header>
+                <div align = left>
+                <p ALIGN=left><h4>{{user}}</h4><a href="/logout"></h3>salir</a></h3></p>
+              </div>
+                </br> 
+            
+             <td> 
+                   
+           
+             </td> 
+             
+             <h1><p ALIGN=CENTER>{{name|safe}}</p></h1>
+                </br> 
+              <div >
+                    <p ALIGN=CENTER>
+                    {{Incidencias_user|safe}}
+                    </p>
+              </div>
+               </br> 
+             <div>   
+                     <p aling =center>copyright</p>
+             </div>
+      </body>
+            
+        {% else %}
+         <body>  
+            <header class="principal">
+           
+          <div class="fila">
+              <nav class="navegacion_principal ">
+                        <ul><li><h2><a href="/">Inicio</h2></li></ul>
+              </nav>
+              <nav class="navegacion_principal ">
+                    <ul><li><h2><a href="/todas">Todas</h2></li></ul>
+               </nav>
+              
+               <nav class="navegacion_principal ">
+                    {{rss|safe}}
+               </nav>
+               <nav class="navegacion_principal right">   
+                    <ul><li><h2><a href="/ayuda">ayuda</a></h2></li></ul>
+               </nav>
+          </div>
+          
+          </header>
+                <div ALIGN=right>
+                  
+                  <form method="post" action="/login">
+                  {% csrf_token %}
+                  <input type='hidden' name='csrfmiddlewaretoken' value='cx0lJjHuf3GdXeqgEfxFH20o1CovrVK8'/>
+                  <span class="heading"><label for="id_username">username:</label></span><br/>
+                  <input id="id_username" maxlength="254" name="username" type="text" /><br/>
+                  <span class="heading"><label for="id_password">password:</label></span><br/>
+                  <input id="id_password" name="password" type="password" /><br/>
+                <div id="login-button">
+                  <input type="submit" value="Log In" />
+                    <input type="hidden" name="next" value="" />
+                 </div>          
+                 </form>
+                </div>
+
+             <div ALIGN = CENTER>
+                 
+                   <p><h4>{{name|safe}}</h4> </p>
+                </br>
+                    {{Incidencias_user|safe}}
+                </br> 
+            
+              </div>
+
+               <div id="pie"  >
+                 <p align = center> 
+                    respeta los derechos de autor. Este sitio tiene copyrigh de Asu Akogo
+                 </p>   
+           </div> 
+
+          </body>
+         {% endif %}
+        
+     </html>

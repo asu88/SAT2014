@@ -1,0 +1,41 @@
+----Autor: Antonio Ramón Asu Akogo.
+------Servicios y Aplicaciones Telemáticas.
+----27-06-2014
+
+            ----------------------------------------------Software Libre ---------------------------
+
+
+
+Para poder utilizar la aplicación es necesario tener instalado el framework 'Django' instalado(version 1.4) y por su puesto python.
+
+¿Cómo utilizar lanzar el servidor ?
+
+1.----
+Fácil: una vez que hayas descomprimido el proyecto en cualquier directorio basta lanzar un terminal 
+y cambiarte al Directorio donde está la aplicación, es decir, si lo has guardado en tu directorio HOME existirá 
+un directorio de nombre "pfinal2014" ejecutas "cd pfinal2014" una vez dentro comprueba que aparece 
+un subdirectorio "theapp" si es así sólo falta lanzar ya el servidor escribiendo y ejecutando "python manage.py runserver 8000"
+
+ -----Comando anterior:
+python: está escrito en python
+manage.py: codigo fuente que se enarga de hacer llmadas a las librerías de Django y al codigo de nuestra aplicación
+runserver: argumento
+8000: es el puerto donde escuchará nuestro servidor no tiene porque ser 8000 siepre que no esté siendo utilizado por 
+        otro proceso dentro del sistema operativo.
+ 
+ si queremos que nuestro servidor pueda servir a cualquier visitante en internet tendriamos que ir a la web de django
+ y encontraremos información(sólo hay que saberse la IP de la red a la que estamos conectados)
+
+
+¿Cómo pruebo la aplicación?
+
+2.----
+  Si lo anterior se ha entendido y ha funcionado aora solo queda lanzar cualquier navegador moderno y escribir 
+  en la barra de direcciones: http://localhost:8000/ ------nos redirigiría a la página principal de la app, donde
+  enconraremos elementos de navegación como en cualquier aplicacion web.
+  
+  para acceder al recurso /admin/ se necesitará loguearse, siendo el nombre de usuario "asu" y la contraseña "1234"
+  en el sistema ya existen usuarios dados de alta.
+  
+  si kieres darte de alta juega un poco con el /admin/
+

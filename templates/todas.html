@@ -1,0 +1,53 @@
+<!doctype html>  
+<html lang="es">
+        <head>
+             <meta charset="UTF-8" />
+            <title>canal</title>
+            <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+            <link href="css/index.css" rel="stylesheet">
+        </head>
+        
+        <body>
+          <div id = "content-menu">
+             <nav> 
+               <ul class = "menu">
+                  <li><a href="/">Inicio</a></li>
+                  <li><a href="/ayuda">Ayuda</a></li>                
+              </ul>
+            </nav> 
+          </div>
+           <br/><br/>
+             
+            <div align=right>
+                <form name="input" action="/todas" method="POST">
+                {% csrf_token %}
+                <input type="radio" name="filtro" value="provincia">provincia
+                <input type="radio" name="filtro" value="tipo">tipo
+                <input type="radio" name="filtro" value="longitud">longitud
+                <input type="radio" name="filtro" value="todas">all
+                <br>
+                <input type="submit" value="filtrar">
+         </form>
+            </div>
+            <div align=center>
+              <h2>
+                SITIO DE TODAS LAS INCIDENCIAS
+              </h2>
+            </div>
+           <br/><br/> 
+          
+          <div align = center> 
+             <p>
+             <h3>{{Incidencias_canal|safe}}</h3>
+            </p>
+          </div> 
+         
+
+        <div id="pie"  >
+                 <p align = center> 
+                    respeta los derechos de autor. Este sitio tiene copyrigh de Asu Akogo
+                  </p>   
+           </div> 
+        </body>
+        
+  </html>
